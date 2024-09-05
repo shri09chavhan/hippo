@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    body {
+
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+
+      text-align: center;
+      perspective: 1000px;
+      /* Added perspective for 3D effect */
+    }
+
+    .ring-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 500px;
+      height: 100px;
+
+      /* 3D rotation */
+      transition: transform 0.5s;
+      /* Smooth transition */
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 10px solid yellow;
+      border-radius: 50%;
+      padding: 10px;
+      background: black;
+      width: 80%;
+      height: 80%;
+    }
+
+    .image {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+
+      /* Keep image upright */
+    }
+
+    button {
+      margin-top: 20px;
+      margin-right: 0px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: yellow;
+      color: black;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: orange;
+    }
+
+    .purple-theme {
+      background-color: purple;
+      color: white;
+    }
+
+    .purple-theme .image-container {
+      border-color: yellow;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .ab {
+      text-decoration: underline;
+    }
+
+    .hr {
+      width: 100%;
+    }
+
+    td {
+      border: 2px solid white;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <h1>MY PORTFOLIO</h1>
+    <button id="theme-toggle">Change Theme</button>
+  </nav>
+  <hr>
+  <div class="container">
+
+    <div class="image-container">
+      <img src="/IMG-20240905-WA0003.jpg" alt="3D Image" class="image">
+    </div>
+    <br>
+    <hr class="hr">
+    <div>
+
+
+      <h2 class="ab">About me</h2>
+      <p>
+        Hello, I’m Shrihari Chauhan, and I’ve recently completed my 10th grade with a commendable percentage of 91.80%. My academic journey has been marked by a strong commitment to excellence and a passion for learning. I am enthusiastic about exploring new fields of knowledge and am eager to apply my skills and dedication to new challenges.
+
+        With a solid foundation in core subjects and a keen interest in coding,physics, science and technology, Archeology, etc. I am looking forward to furthering my education and developing my abilities. I am driven by a desire to make meaningful contributions and am always open to opportunities that foster growth and innovation.
+
+        Thank you for visiting my portfolio. I look forward to connecting and exploring new possibilities.
+      </p>
+      <br>
+      <hr class="hr">
+
+      <h2 class="ab">Education</h2>
+
+      <ol>
+        <li class="ab">SSC</li>
+        <p>I pass my 10th gradein SUNRISE english School,Tiosa with result of 91.80%</p>
+        <li class="ab">Diploma</li>
+        <p>Today I am learning in Government polytechnic,Arvi for diploma in computer engineering.I will complete my diploma in next Three year.</p>
+      </ol>
+      <br>
+      <hr class="hr">
+      <h2 class="ab">Skills</h2>
+      <table>
+        <tr>
+          <td>HTML</td>
+          <td>CSS</td>
+          <td>Javascript</td>
+          <td>Tailwind CSS</td>
+          <td>Node js</td>
+
+
+        </tr>
+        <th>
+
+        <td>React Js</td>
+        <td>Express js</td>
+        <td>Mongo DB</td>
+        <td>Figma</td>
+
+
+
+        </th>
+
+      </table>
+      <br>
+      <hr class="hr">
+      <h2 class="ab">Projects</h2>
+      <ul>
+        <li>Project 1 :QR code generator</li>
+        <button><a href="https://shreeqr.netlify.app">shreeqr.netlify.app</a></button>
+        <br>
+        <li>Project 2: Happy Teacher's Day</li>
+        <button><a href="https://specialteachersday.netlify.app">specialteachersday.netlify.<caption></caption></a></button>
+      </ul>
+      <br>
+      <hr class="hr">
+      <h2 class="ab">Contact</h2>
+      <h4>Email : shree11chauhan@gmail.com</h4>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('purple-theme');
+      const button = document.getElementById('theme-toggle');
+      if (document.body.classList.contains('purple-theme')) {
+        button.textContent = 'Switch to Black';
+      } else {
+        button.textContent = 'Switch to Purple';
+      }
+    });
+  </script>
+</body>
+
+</html>
