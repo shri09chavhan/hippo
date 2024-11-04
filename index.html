@@ -7,7 +7,6 @@
   <title>Portfolio</title>
   <style>
     body {
-
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: black;
@@ -22,10 +21,8 @@
       align-items: center;
       height: 100vh;
       width: 100vw;
-
       text-align: center;
       perspective: 1000px;
-      /* Added perspective for 3D effect */
     }
 
     .ring-container {
@@ -34,35 +31,27 @@
       align-items: center;
       width: 500px;
       height: 100px;
-
-      /* 3D rotation */
       transition: transform 0.5s;
-      /* Smooth transition */
     }
 
     .image-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 10px solid yellow;
-      border-radius: 50%;
       padding: 10px;
       background: black;
       width: 80%;
-      height: 80%;
+      height: 45%;
     }
 
     .image {
       width: 100%;
-      height: auto;
+      height: 100%;
       border-radius: 50%;
-
-      /* Keep image upright */
     }
 
     button {
       margin-top: 20px;
-      margin-right: 0px;
       padding: 10px 20px;
       border: none;
       border-radius: 5px;
@@ -88,31 +77,163 @@
 
     .nav {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       background-color: black;
       color: white;
-      padding: 10px;
+      padding: 10px 20px;
       width: 100%;
       z-index: 10;
+    }
+
+    .nav h1 {
+      margin: 0;
+    }
+
+    .menu {
+      display: none;
+      flex-direction: column;
+      background-color: black;
+      position: absolute;
+      right: 20px;
+      top: 50px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .menu a {
+      color: white;
+      padding: 8px 0;
+      text-decoration: none;
+    }
+
+    .menu a:hover {
+      color: yellow;
+    }
+
+    .menu-button {
+      cursor: pointer;
+      font-size: 18px;
+      border: none;
+      background: none;
+      color: white;
+    }
+
+    .about {
+      border: 2px solid grey;
+      border-radius: 20px;
+      background-color: dimgrey;
+      padding: 20px;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    hr {
+      width: 100%;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.6;
     }
 
     .ab {
       text-decoration: underline;
     }
 
-    .hr {
-      width: 100%;
+    .skills,
+    .projects,
+    .contact {
+      padding: 0 20px;
+      text-align: left;
+      max-width: 600px;
+      margin: 20px auto;
     }
 
-    td {
-      border: 2px solid white;
+    h3 {
+      margin-top: 20px;
+      text-decoration: underline;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills-list li {
+      flex: 1 1 100px;
+      margin: 5px;
+      padding: 10px;
+      border: 1px solid grey;
+      border-radius: 5px;
+      text-align: center;
+      background-color: black;
+      color: white;
     }
 
     a {
+      color: white;
       text-decoration: none;
+    }
+
+    .project-links button {
+      background-color: yellow;
+      color: black;
+      margin-top: 10px;
+    }
+
+    .project-links button a {
+      color: black;
+    }
+
+    .cv {
+      border: 1px solid red;
+      border-radius: 10px;
+      background-color: #4465CC;
+      height: 50px;
+      width: 190px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cv a {
+      text-orientation: none;
+      color: black;
+
+    }
+
+    .sm img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .name {
+      font-size: 50px;
+      font-weight: bolder;
+      color: white;
+      animation: move 5s infinite linear;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateY(0);
+        opacity: 0%
+      }
+
+      50% {
+        transform: translateY(-20px);
+        opacity: 50%;
+      }
+
+      100% {
+
+        opacity: 100%;
+      }
     }
   </style>
 </head>
@@ -121,84 +242,70 @@
   <nav class="nav">
     <h1>MY PORTFOLIO</h1>
     <button id="theme-toggle">Change Theme</button>
-  </nav>
-  <hr>
-  <div class="container">
-
-    <div class="image-container">
-      <img src="/IMG-20240905-WA0003.jpg" alt="3D Image" class="image">
+    <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
+    <div class="menu" id="menu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </div>
-    <br>
-    <hr class="hr">
-    <div>
+  </nav>
 
+  <div class="container">
+    <div class="image-container">
+      <img src="https://i.im.ge/2024/11/03/kzqvVW.1000007115.png" alt="3D Image" class="image">
+    </div>
 
-      <h2 class="ab">About me</h2>
+    <div class="name">
+      SHRIHARI CHAVHAN
+    </div>
+    <div class="about" id="about">
+      <h2>About Me</h2>
       <p>
-        Hello, I’m Shrihari Chauhan, and I’ve recently completed my 10th grade with a commendable percentage of 91.80%. My academic journey has been marked by a strong commitment to excellence and a passion for learning. I am enthusiastic about exploring new fields of knowledge and am eager to apply my skills and dedication to new challenges.
-
-        With a solid foundation in core subjects and a keen interest in coding,physics, science and technology, Archeology, etc. I am looking forward to furthering my education and developing my abilities. I am driven by a desire to make meaningful contributions and am always open to opportunities that foster growth and innovation.
-
-        Thank you for visiting my portfolio. I look forward to connecting and exploring new possibilities.
+        Hello, I’m Shrihari Chavhan, currently studying for a diploma in Computer Engineering at Government Polytechnic Arvi. My academic journey has been driven by a passion for learning and a commitment to excellence. I am enthusiastic about exploring new knowledge areas and applying my skills to challenges.
       </p>
-      <br>
-      <hr class="hr">
+    </div>
 
-      <h2 class="ab">Education</h2>
-
-      <ol>
-        <li class="ab">SSC</li>
-        <p>I pass my 10th gradein SUNRISE english School,Tiosa with result of 91.80%</p>
-        <li class="ab">Diploma</li>
-        <p>Today I am learning in Government polytechnic,Arvi for diploma in computer engineering.I will complete my diploma in next Three year.</p>
-      </ol>
-      <br>
-      <hr class="hr">
+    <div class="skills" id="skills">
       <h2 class="ab">Skills</h2>
-      <table>
-        <tr>
-          <td>HTML</td>
-          <td>CSS</td>
-          <td>Javascript</td>
-          <td>Tailwind CSS</td>
-          <td>Node js</td>
-
-
-        </tr>
-        <th>
-
-        <td>React Js</td>
-        <td>Express js</td>
-        <td>Mongo DB</td>
-        <td>Figma</td>
-
-
-
-        </th>
-
-      </table>
-      <br>
-      <hr class="hr">
-      <h2 class="ab">Projects</h2>
-      <ul>
-        <li>Project 1 :QR code generator</li>
-        <button><a href="https://shreeqr.netlify.app">shreeqr.netlify.app</a></button>
-        <br>
-        <li>Project 2: Happy Teacher's Day</li>
-        <button><a href="https://specialteachersday.netlify.app">specialteachersday.netlify.<caption></caption></a></button>
+      <h3>Front-End</h3>
+      <ul class="skills-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Tailwind CSS</li>
+        <li>React JS</li>
       </ul>
-      <br>
-      <hr class="hr">
+      <h3>Back-End</h3>
+      <ul class="skills-list">
+        <li>Node.js</li>
+        <li>Express.js</li>
+        <li>Figma</li>
+      </ul>
+    </div>
+    <hr>
+    <div class="projects" id="projects">
+      <h2 class="ab">Projects</h2>
+      <ul class="project-links">
+        <li>Project 1: QR Code Generator</li>
+        <button><a href="https://shreeqr.netlify.app">shreeqr.netlify.app</a></button>
+        <li>Project 2: Happy Teacher's Day</li>
+        <button><a href="https://specialteachersday.netlify.app">specialteachersday.netlify.app</a></button>
+      </ul>
+    </div>
+    <hr>
+    <div class="cv">
+      <a href="https://drive.google.com/file/d/1L6QaswP-TOwSCHvpbs168XEV0YcoBzHB/view?usp=drivesdk">Download My CV</a>
+    </div>
+    <div class="contact" id="contact">
       <h2 class="ab">Contact</h2>
-      <h4>Email : shree11chauhan@gmail.com</h4>
+      <h4>Email: shree09chauhan@gmail.com</h4>
+      <div class="sm">
 
-
-
-
-
-
-
-
+        <a href="https://x.com/shree09chavhan?t=4cDGoZPeTsM8MxLqhckazg&s=09"><img src="https://i.im.ge/2024/11/04/kzYBIT.1000007255.png" alt="twitter" border="0"></a>
+        <a href="https://www.linkedin.com/in/shrihari-chauhan-5682b42a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="https://i.im.ge/2024/11/04/kzY4M0.1000007254.png" alt="linkedin" border="0"></a>
+        <a href="https://www.instagram.com/shree_chavhan_122/?hl=en"><img src="https://i.im.ge/2024/11/04/kzYGEc.1000007247.png" alt="instagram" border="0"></a><a href="https://github.com/shri09chavhan"><img src="https://i.im.ge/2024/11/04/kzbTNx.1000007257.png" alt="github" border="0"></a>
+      </div>
     </div>
   </div>
 
@@ -206,12 +313,13 @@
     document.getElementById('theme-toggle').addEventListener('click', () => {
       document.body.classList.toggle('purple-theme');
       const button = document.getElementById('theme-toggle');
-      if (document.body.classList.contains('purple-theme')) {
-        button.textContent = 'Switch to Black';
-      } else {
-        button.textContent = 'Switch to Purple';
-      }
+      button.textContent = document.body.classList.contains('purple-theme') ? 'Switch to Black' : 'Switch to Purple';
     });
+
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
   </script>
 </body>
 
